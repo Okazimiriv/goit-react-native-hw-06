@@ -1,6 +1,9 @@
 import 'react-native-gesture-handler';
 
 import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+
 import { useFonts } from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -25,73 +28,75 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <MainStack.Navigator
-        initialRouteName="Registration"
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <MainStack.Screen
-          name="Registration"
-          component={Registration}
+    <Provider store={store}>
+      <NavigationContainer>
+        <MainStack.Navigator
+          initialRouteName="Registration"
           screenOptions={{
             headerShown: false,
           }}
-        />
-        <MainStack.Screen
-          name="Login"
-          component={Login}
-          screenOptions={{
-            headerShown: false,
-          }}
-        />
-        <MainStack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            // title: 'Home',
-            headerStyle: {
-              backgroundColor: '#FF6C00',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-              fontSize: 20,
-            },
-          }}
-        />
-        <MainStack.Screen
-          name="Post"
-          component={Post}
-          options={{
-            title: 'Публікації',
-            headerShown: true,
-          }}
-        />
-        <MainStack.Screen
-          name="Comments"
-          component={Comments}
-          options={{
-            title: 'Коментарі',
-            headerShown: true,
-            headerStyle: {
-              borderBottomWidth: 1,
-            },
-          }}
-        />
-        <MainStack.Screen
-          name="Map"
-          component={Map}
-          options={{
-            title: 'Мапа',
-            headerShown: true,
-            headerStyle: {
-              borderBottomWidth: 1,
-            },
-          }}
-        />
-      </MainStack.Navigator>
-    </NavigationContainer>
+        >
+          <MainStack.Screen
+            name="Registration"
+            component={Registration}
+            screenOptions={{
+              headerShown: false,
+            }}
+          />
+          <MainStack.Screen
+            name="Login"
+            component={Login}
+            screenOptions={{
+              headerShown: false,
+            }}
+          />
+          <MainStack.Screen
+            name="Home"
+            component={Home}
+            options={{
+              // title: 'Home',
+              headerStyle: {
+                backgroundColor: '#FF6C00',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+                fontSize: 20,
+              },
+            }}
+          />
+          <MainStack.Screen
+            name="Post"
+            component={Post}
+            options={{
+              title: 'Публікації',
+              headerShown: true,
+            }}
+          />
+          <MainStack.Screen
+            name="Comments"
+            component={Comments}
+            options={{
+              title: 'Коментарі',
+              headerShown: true,
+              headerStyle: {
+                borderBottomWidth: 1,
+              },
+            }}
+          />
+          <MainStack.Screen
+            name="Map"
+            component={Map}
+            options={{
+              title: 'Мапа',
+              headerShown: true,
+              headerStyle: {
+                borderBottomWidth: 1,
+              },
+            }}
+          />
+        </MainStack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1076106008736",
+    "project_id": "hw-react-native-c3e3a",
+    "storage_bucket": "hw-react-native-c3e3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076106008736:android:272305935a2018f9f1d1c5",
+        "android_client_info": {
+          "package_name": "com.react.nativehw"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiVrOqIoPmyJpQXVs-22sFmPPEF-MOtzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
